@@ -1,0 +1,243 @@
+/* Reset semua margin, padding, dan box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #e0f7fa; /* Cyan muda */
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #00bcd4; /* Cyan */
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-bottom: 4px solid #0097a7; /* Cyan gelap */
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;   
+    margin-bottom: 3px;
+}
+
+.logo img {
+  width: 50px;
+  transition: transform 0.3s ease;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Formulir Input */
+section {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 800px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #0097a7;
+}
+
+/* Input Fields */
+label {
+  font-weight: bold;
+  color: #00bcd4; /* Cyan */
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #0097a7;
+  border-radius: 5px;
+}
+
+input[type="checkbox"] {
+  margin-bottom: 15px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #00bcd4; /* Cyan */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0097a7; /* Cyan lebih gelap saat hover */
+}
+
+button:disabled {
+  background-color: #b2ebf2;
+  cursor: not-allowed;
+}
+
+/* Rak Buku */
+#incompleteBookList,
+#completeBookList {
+  margin-top: 20px;
+}
+
+#incompleteBookList div,
+#completeBookList div {
+  background-color: white;
+  color: #0097a7;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#incompleteBookList div:hover,
+#completeBookList div:hover {
+  background-color: white;
+}
+
+#bookItem div {
+  background-color: white;
+}
+
+/* Tombol pada Buku */
+button[data-testid="bookItemIsCompleteButton"] {
+  background-color: #4caf50; /* Hijau untuk selesai dibaca */
+}
+
+button[data-testid="bookItemDeleteButton"] {
+  background-color: #f44336; /* Merah untuk hapus */
+}
+
+button[data-testid="bookItemEditButton"] {
+  background-color: #ff9800; /* Oranye untuk edit */
+}
+
+button[data-testid="bookItemIsCompleteButton"]:hover {
+  background-color: #388e3c; /* Hijau lebih gelap */
+}
+
+/* Pencarian Buku */
+#searchBook {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+#searchBook input {
+  flex-grow: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #0097a7;
+  border-radius: 5px;
+}
+
+#searchBook button {
+  padding: 10px 20px;
+  background-color: #00bcd4;
+  color: white;
+  border: 1;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#searchBook button:hover {
+  background-color: #0097a7;
+}
+
+/* RESPONSIVE MEDIA QUERIES */
+
+/* Tablet and smaller screens */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  section {
+    padding: 15px;
+    margin: 10px;
+    max-width: 100%;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="checkbox"] {
+    padding: 8px;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  #searchBook {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #searchBook input {
+    margin-bottom: 10px;
+  }
+
+  button[data-testid="bookItemIsCompleteButton"],
+  button[data-testid="bookItemDeleteButton"],
+  button[data-testid="bookItemEditButton"] {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+/* Mobile Screens */
+@media (max-width: 480px) {
+  header {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  section {
+    padding: 10px;
+  }
+
+  button {
+    padding: 8px 15px;
+    font-size: 0.8rem;
+  }
+
+  #searchBook input {
+    padding: 8px;
+  }
+
+  #incompleteBookList div,
+  #completeBookList div {
+    padding: 10px;
+  }
+}
